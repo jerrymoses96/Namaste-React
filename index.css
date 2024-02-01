@@ -31,6 +31,13 @@ body {
   font-size: 20px;
   font-weight: 500;
 }
+
+/* Assuming you have a CSS file where you define your styles */
+.link {
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Inherits color from parent */
+}
+
 .nav-items > ul > li:hover {
   color: tomato;
 }
@@ -253,4 +260,161 @@ input {
 .testimonials cite {
   font-style: normal;
   color: #777;
+}
+
+.contact-us-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 50px;
+
+  background-color: #f8f9fa; /* Light gray background */
+}
+
+.contact-us-content {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.contact-us-content h1 {
+  color: #ff4500; /* Orange-Red color */
+  margin-bottom: 20px;
+}
+
+.contact-us-description {
+  color: #333333;
+  margin-bottom: 30px;
+}
+
+.contact-info,
+.visit-us,
+.send-message {
+  margin-bottom: 30px;
+}
+
+.contact-info h2,
+.visit-us h2,
+.send-message h2 {
+  color: #ff4500; /* Orange-Red color */
+  margin-bottom: 10px;
+}
+
+.contact-info p,
+.visit-us p {
+  color: #555555;
+  margin-bottom: 5px;
+}
+
+.send-message form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+
+.submit-button {
+  background-color: #ff4500; /* Orange-Red color */
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #ff6347; /* Lighter shade of orange-red */
+}
+
+.res-box {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.831);
+}
+
+.menu {
+  font-family: "Roboto", sans-serif;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background: #ee0979; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff6a00,
+    #ee0979
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff6a00,
+    #ee0979
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.menu h1 {
+  font-size: 35px;
+  color: darkslategray;
+  font-weight: 900;
+}
+
+.menu h2 {
+  font-size: 20px;
+  color: darkslategray;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.menu h3 {
+  font-size: 18px;
+  color: #f57c00; /* Orange */
+}
+
+.menu h4 {
+  font-size: 16px;
+  color: darkslategray;
+  margin-top: 20px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  font-size: 16px;
+  color: #333333; /* Dark Grey */
+  margin-bottom: 5px;
+}
+
+.menu-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+.menu-items {
+  border: 3px solid rgb(210, 48, 48);
+  border-radius: 10px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: whitesmoke;
 }

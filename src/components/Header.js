@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 // Refactored header component
 const Header = () => {
@@ -11,10 +12,10 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
+          <li> <Link to="/" className="link">Home</Link></li>
+          <li> <Link to="/about" className="link">About</Link></li>
+          <li> <Link to="/contact" className="link">Contact</Link></li>         
+          <li>Cart</li>  
           <button className="btn" onClick={() =>{
              Btnname === "Login" ? setBtnname("Logout") : setBtnname("Login");
           }}>
