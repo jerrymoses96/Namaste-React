@@ -418,3 +418,7 @@ input {
   padding: 15px;
   background-color: whitesmoke;
 }
+
+.user-list {
+  border: 2px groove black;
+}

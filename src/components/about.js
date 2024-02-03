@@ -2,10 +2,14 @@
 
 import React from "react";
 import TeamMember from "./TeamMembers"; // Assuming you have a component for displaying team members
+import User from "./User";
+import UserClass from "./UserClass";
 
 function AboutUsPage() {
   return (
     <div className="about-us-page">
+      {/* <User name={"JERIN OUSEPH"} place={"THRISSUR"} /> */}
+      <UserClass name={"JERIN OUSEPH"} place={"THRISSUR"} />
       <h1>About Us</h1>
       <p>
         Welcome to our food delivery app! We're dedicated to providing you with
