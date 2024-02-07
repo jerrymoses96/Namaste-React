@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import HangmanGame from "./GameComponent";
 
 const Body = () => {
   let [ListOfRestaurants, setListOfRestaurants] = useState([]);
@@ -30,6 +32,12 @@ const Body = () => {
   };
 
   // conditional rendering
+
+  const OnlineStatus = useOnlineStatus();
+  
+
+  if (OnlineStatus === false)
+    return <HangmanGame/>;
 
   return ListOfRestaurants.length === 0 ? (
     <Shimmer />
@@ -76,13 +84,18 @@ const Body = () => {
       <div className="restaurant-container">
         {filteredRestaurants.map((restaurant) => {
           return (
-            <Link className="res-box" key={restaurant.info.id} to={"/Restaurants/"+restaurant.info.id}><RestaurantCard  resData={restaurant} /></Link>
+            <Link
+              className="res-box"
+              key={restaurant.info.id}
+              to={"/Restaurants/" + restaurant.info.id}
+            >
+              <RestaurantCard resData={restaurant} />
+            </Link>
           );
         })}
       </div>
     </div>
   );
 };
-
 
 export default Body;
