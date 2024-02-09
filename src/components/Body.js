@@ -34,19 +34,17 @@ const Body = () => {
   // conditional rendering
 
   const OnlineStatus = useOnlineStatus();
-  
 
-  if (OnlineStatus === false)
-    return <HangmanGame/>;
+  if (OnlineStatus === false) return <HangmanGame />;
 
   return ListOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="search">
+      <div className="search p-7 flex justify-center gap-3 ">
         <input
           type="search"
-          className="search-box"
+          className="border border-solid border-black px-[100px] py-3"
           placeholder="Search for food or Restaurants"
           value={searchText}
           onChange={(e) => {
@@ -54,7 +52,7 @@ const Body = () => {
           }}
         />
         <button
-          className="search-button"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded"
           onClick={() => {
             // write filter logic
             filteredRestaurants = ListOfRestaurants.filter((res) =>
@@ -67,9 +65,9 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="filter">
+      <div className="ml-[500px]">
         <button
-          className="filter-btn"
+          className="px-10 py-3 bg-green-600 rounded-lg"
           onClick={() => {
             filteredlist = ListOfRestaurants.filter(
               (res) => res.info.avgRating > 4.4
@@ -81,7 +79,7 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div className="restaurant-container">
+      <div className=" flex flex-wrap justify-center ">
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link
