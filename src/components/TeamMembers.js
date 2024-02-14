@@ -1,10 +1,9 @@
 // TeamMember.js
 
-
 function TeamMember({ name, position, bio, imageUrl }) {
   return (
     <div className="team-member">
-      <div className="member-image">
+      <div className="member-image rounded-full h-72  overflow-hidden ">
         <img src={imageUrl} alt={`${name}`} />
       </div>
       <div className="member-info">

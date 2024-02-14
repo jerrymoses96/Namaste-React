@@ -6,11 +6,16 @@ import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import HangmanGame from "./GameComponent";
+import { withPromotedLabel } from "./RestaurantCard";
 
 const Body = () => {
   let [ListOfRestaurants, setListOfRestaurants] = useState([]);
   let [filteredRestaurants, setFilteredRestaurants] = useState([]);
   let [searchText, setSearchText] = useState("");
+
+  // console.log(ListOfRestaurants);
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -40,7 +45,7 @@ const Body = () => {
   return ListOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
+    <div className="body font-mono">
       <div className="search p-7 flex justify-center gap-3 ">
         <input
           type="search"
@@ -87,7 +92,11 @@ const Body = () => {
               key={restaurant.info.id}
               to={"/Restaurants/" + restaurant.info.id}
             >
-              <RestaurantCard resData={restaurant} />
+              {restaurant.info.isOpen ? (
+                <RestaurantCardPromoted resData={restaurant} />
+              ) : (
+                <RestaurantCard resData={restaurant} />
+              )}
             </Link>
           );
         })}

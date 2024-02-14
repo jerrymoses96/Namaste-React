@@ -8,9 +8,7 @@ import UserClass from "./UserClass";
 function AboutUsPage() {
   return (
     <div className="about-us-page">
-      {/* <User name={"JERIN OUSEPH"} place={"THRISSUR"} /> */}
-      <UserClass name={"JERIN OUSEPH"} place={"THRISSUR"} />
-      <h1>About Us</h1>
+      <h1 className="text-center text-4xl font-bold mb-5">About Us</h1>
       <p>
         Welcome to our food delivery app! We're dedicated to providing you with
         delicious meals delivered right to your doorstep.
@@ -24,7 +22,7 @@ function AboutUsPage() {
       </p>
 
       <h2>Meet Our Team</h2>
-      <div className="team-members">
+      <div className="team-members flex">
         <TeamMember
           name="John Doe"
           position="CEO"
