@@ -1,12 +1,13 @@
 import RestaurantCard from "./RestaurantCard";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import HangmanGame from "./GameComponent";
 import { withPromotedLabel } from "./RestaurantCard";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   let [ListOfRestaurants, setListOfRestaurants] = useState([]);
@@ -16,6 +17,8 @@ const Body = () => {
   // console.log(ListOfRestaurants);
 
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+  const {setLoggedUsers,LoggedUser} = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -83,6 +86,10 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        <div className="my-5">
+          <label>UserName</label>
+          <input className="border border-black" value={LoggedUser} onChange={(e)=>setLoggedUsers(e.target.value)} />
+        </div>
       </div>
       <div className=" flex flex-wrap justify-center ">
         {filteredRestaurants.map((restaurant) => {

@@ -1,14 +1,17 @@
 // AboutUsPage.js
 
-import React from "react";
+import React, { useContext } from "react";
 import TeamMember from "./TeamMembers"; // Assuming you have a component for displaying team members
 import User from "./User";
 import UserClass from "./UserClass";
+import UserContext from "../utils/UserContext";
 
 function AboutUsPage() {
+  const { LoggedUser } = useContext(UserContext);
   return (
     <div className="about-us-page">
       <h1 className="text-center text-4xl font-bold mb-5">About Us</h1>
+      <h2 className="font-mono text-right">User Logged : {LoggedUser}</h2>
       <p>
         Welcome to our food delivery app! We're dedicated to providing you with
         delicious meals delivered right to your doorstep.
