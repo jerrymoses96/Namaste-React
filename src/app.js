@@ -9,6 +9,8 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/shimmer";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 // lazy loading
 // importing is also done here
@@ -30,12 +32,14 @@ useEffect(() => {
 }, []);
 
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{ LoggedUser: LoggedUsers,setLoggedUsers }}>
       <div className="app">
         <Header />
         <Outlet />
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
