@@ -1,8 +1,16 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
+
+
 
 const CategoryBody = ({ items }) => {
-  console.log(items);
 
+  const dispatch = useDispatch();
+const handleItemsCart = (item) => {
+  // dispatch an action
+  dispatch(addItem(item));
+};
   // Check if items is undefined or null
   if (!items) {
     return <div>No items to display</div>;
@@ -29,7 +37,10 @@ const CategoryBody = ({ items }) => {
                 src={CDN_URL + item.card.info.imageId}
                 className="w-24 h-24 shadow-lg"
               />
-              <button className="bg-black text-white absolute bottom-0 hover:bg-slate-300 hover:text-black z-20 rounded-md p-1 ">
+              <button
+                onClick={()=>handleItemsCart(item)}
+                className="bg-black text-white absolute bottom-0 hover:bg-slate-300 hover:text-black z-20 rounded-md p-1 "
+              >
                 ADD +
               </button>
             </div>
