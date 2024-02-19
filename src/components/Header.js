@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import { BsCartCheck } from "react-icons/bs";
 
 // Refactored header component
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
   const { LoggedUser } = useContext(UserContext);
 
   // subscribing to the store
-  const cartItems = useSelector((store)=>store.cart.items);
+  const cartItems = useSelector((store) => store.cart.items);
 
   return (
     <div className="header flex justify-between items-center ">
@@ -46,10 +47,16 @@ const Header = () => {
               Grocery
             </Link>
           </li>
-          <li className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-            <Link to="/cart" className="link" > Cart-({cartItems.length}) </Link>
-            
-            
+          <li className="">
+            <Link to="/cart" className="link">
+              {" "}
+              <div className="flex items-center gap-1">
+                <BsCartCheck />
+                <span className="bg-orange-600 rounded-full w-7 h-7 text-white font-thin text-center">
+                  {cartItems.length}
+                </span>
+              </div>
+            </Link>
           </li>
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
